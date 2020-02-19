@@ -32,13 +32,13 @@ public class oData_Global {
     }
 
     @Then("^Status code should be 200 for global API$")
-    public void status_code_should_be_200_for_global_api() throws Throwable {
+    public void status_code_should_be_200_for_global_api()  {
         System.out.println("as");
 
     }
 
     @And("^Response should have all the related information$")
-    public void response_should_have_all_the_related_information() throws Throwable {
+    public void response_should_have_all_the_related_information() {
         System.out.println("as");
     }
 }
