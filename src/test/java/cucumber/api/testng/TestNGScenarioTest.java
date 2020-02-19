@@ -14,8 +14,8 @@ import org.testng.annotations.Test;
         monochrome = true,
         features = "src/test/resources/cucumber/runtime/testng",
         glue = "cucumber.stepdefinition",
-        plugin = {"pretty", "html:target/cucumber-html-report" },
-        tags={"@FA-test,@FA-test2"})
+        plugin = {"pretty", "html:target/cucumber-html-report" }
+       )
 public class TestNGScenarioTest
 {
     private TestNGCucumberRunner testNGCucumberRunner;
@@ -32,11 +32,11 @@ public class TestNGScenarioTest
         this.testNGCucumberRunner.finish();
     }
 
-    @Test(dataProvider = "scenarios",description = "Run each scenarios as testng test",groups = {"cucumber"})
+   /* @Test(dataProvider = "scenarios",description = "Run each scenarios as testng test",groups = {"cucumber"})
     public void runScenario(CucumberTagStatementWrapper cucumberTagStatementWrapper) throws Throwable
     {
         this.testNGCucumberRunner.runCucumberScenario(cucumberTagStatementWrapper.getCucumberScenario());
-    }
+    }*/
 
     @DataProvider(name = "scenarios")
     public Object[][] getScenarios()

@@ -78,6 +78,14 @@
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>6</source>
+                    <target>6</target>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <dependencies>
@@ -85,6 +93,12 @@
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-core</artifactId>
             <version>1.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>4.1.2</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>info.cukes</groupId>

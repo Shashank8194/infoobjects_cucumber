@@ -3,7 +3,7 @@
 <suite name="Testng Cucumber Suite">
   <test name="Run All Tests">
   <classes>
-    <class name="TestClass"></class>
+
     <class name="cucumber.api.testng.TestNGScenarioTest"></class>
   </classes>
   
