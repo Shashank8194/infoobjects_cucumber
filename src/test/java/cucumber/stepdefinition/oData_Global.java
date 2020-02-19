@@ -23,7 +23,7 @@ public class oData_Global {
     }
 
     @When("^User login with valid username and password$")
-    public void user_login_with_valid_username_and_password() throws Throwable {
+    public void user_login_with_valid_username_and_password()   {
         response=given().
                 header("username",configFileReader.username()).
                 header("password",configFileReader.password())
