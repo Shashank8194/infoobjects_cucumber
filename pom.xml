@@ -9,6 +9,18 @@
     <name>Cucumber-JVM: TestNG Scenarios Support</name>
     <description>Supports runnig cucumber scenarion as testng test</description>
     <url>https://github.com/prasanta-biswas/testng-cucumber</url>
+    <profiles>
+<profile>
+<id>Fitnesse</id>
+<activation>
+    <activeByDefault>false</activeByDefault>
+</activation>
+    <properties>
+<profile.path>src/main/utilities/environments/Fitnesse/config.properties</profile.path>
+        <testToRun></testToRun>
+    </properties>
+</profile>
+    </profiles>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

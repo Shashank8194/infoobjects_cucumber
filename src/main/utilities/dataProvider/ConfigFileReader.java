@@ -67,4 +67,25 @@ public class ConfigFileReader {
         else
             throw  new RuntimeException("oData_global_endpoint is not specified");
     }
+
+    public  String Base_URI()
+    {
+        String Base_URI=properties.getProperty("Base_URI");
+        if (Base_URI!=null)
+        {
+            return Base_URI;
+        }
+        else
+            throw  new RuntimeException("oData_global_endpoint is not specified");
+    }
+    public  String end_point()
+    {
+        String end_point=properties.getProperty("end_point");
+        if (end_point!=null)
+        {
+            return end_point;
+        }
+        else
+            throw  new RuntimeException("end_point is not specified");
+    }
 }

@@ -8,6 +8,7 @@ import cucumber.dataProvider.ConfigFileReader;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import utilities.Commons;
 
 import static io.restassured.RestAssured.given;
 
@@ -16,10 +17,14 @@ public class oData_Global {
     Response response;
     RequestSpecification request = given();
     ConfigFileReader configFileReader=new ConfigFileReader();
+    Commons commons=new Commons();
 
     @Given("^User hit the global URI$")
     public void user_hit_the_global_uri() throws Throwable {
         RestAssured.baseURI="https://87gh1tsvui.execute-api.us-east-1.amazonaws.com";
+        RestAssured.baseURI=commons.generate_request_url();
+
+
     }
 
     @When("^User login with valid username and password$")
