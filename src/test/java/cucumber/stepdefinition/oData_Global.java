@@ -10,18 +10,19 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import utilities.Commons;
 
+
 import static io.restassured.RestAssured.given;
 
 public class oData_Global {
 
     Response response;
     RequestSpecification request = given();
-    ConfigFileReader configFileReader=new ConfigFileReader();
-    Commons commons=new Commons();
+     Commons commons=new Commons();
+    cucumber.dataProvider.ConfigFileReader configFileReader=new ConfigFileReader();
 
     @Given("^User hit the global URI$")
     public void user_hit_the_global_uri() throws Throwable {
-        RestAssured.baseURI="https://87gh1tsvui.execute-api.us-east-1.amazonaws.com";
+        //RestAssured.baseURI="https://87gh1tsvui.execute-api.us-east-1.amazonaws.com";
         RestAssured.baseURI=commons.generate_request_url();
 
 
@@ -32,13 +33,13 @@ public class oData_Global {
         response=given().
                 header("username",configFileReader.username()).
                 header("password",configFileReader.password())
-                .get(configFileReader.oData_global_endpoint());
+                .get(commons.getEnd_Point() +"/global");
 
     }
 
     @Then("^Status code should be 200 for global API$")
     public void status_code_should_be_200_for_global_api()  {
-        System.out.println("as");
+        commons.Status_code();
 
     }
 

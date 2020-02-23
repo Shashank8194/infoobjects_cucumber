@@ -8,8 +8,7 @@ import java.util.Properties;
 
 public class ConfigFileReader {
     public Properties properties;
-    public final String propertyFilePath = "C://Users//Info_DS//Downloads//testng-cucumber//src//test//resources//configuration.properties";
-
+    public final String propertyFilePath = "C://Users//Rishi//IdeaProjects//infoobjects_cucumber//src//test//resources//configuration.properties";
 
     public ConfigFileReader() {
         BufferedReader reader;
