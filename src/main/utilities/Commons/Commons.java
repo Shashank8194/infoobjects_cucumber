@@ -1,14 +1,14 @@
-package utilities;
+package main.utilities.Commons;
 
-import cucumber.dataProvider.ConfigFileReader;
+
 import io.restassured.response.Response;
+import main.utilities.dataProvider.ConfigFileReader;
 
-public class Commons {
+public class Commons{
    private String Base_URI;
    private String End_Point;
     String Entity;
     ConfigFileReader configFileReader=new ConfigFileReader();
-    Response response;
 
 
     public String generate_request_url()
@@ -31,7 +31,7 @@ public class Commons {
         else throw new RuntimeException("End point is not specified");
     }
 
-    public Integer Status_code()
+    public Integer Status_code(Response response)
     {
          int status_code=response.getStatusCode();
          if (status_code==200)
@@ -40,6 +40,11 @@ public class Commons {
             return  status_code;
          }
          else throw new RuntimeException(String.valueOf(status_code));
+    }
+
+   public void print_response(Response response)
+    {
+        System.out.println(response.asString());
     }
 
 }

@@ -1,4 +1,4 @@
-package cucumber.dataProvider;
+package main.utilities.dataProvider;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -8,7 +8,7 @@ import java.util.Properties;
 
 public class ConfigFileReader {
     public Properties properties;
-    public final String propertyFilePath = "C://Users//Rishi//IdeaProjects//infoobjects_cucumber//src//test//resources//configuration.properties";
+    public final String propertyFilePath = "C:\\Users\\Info_DS\\Downloads\\infoobjects_cucumber\\src\\test\\resources\\configuration.properties";
 
     public ConfigFileReader() {
         BufferedReader reader;

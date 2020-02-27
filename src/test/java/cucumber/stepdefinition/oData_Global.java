@@ -4,21 +4,21 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import cucumber.dataProvider.ConfigFileReader;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import utilities.Commons;
+import main.utilities.Commons.Commons;
+import main.utilities.dataProvider.ConfigFileReader;
 
 
 import static io.restassured.RestAssured.given;
 
 public class oData_Global {
 
-    Response response;
+   public Response response;
     RequestSpecification request = given();
-     Commons commons=new Commons();
-    cucumber.dataProvider.ConfigFileReader configFileReader=new ConfigFileReader();
+    Commons commons=new Commons();
+    ConfigFileReader configFileReader=new ConfigFileReader();
 
     @Given("^User hit the global URI$")
     public void user_hit_the_global_uri() throws Throwable {
@@ -39,12 +39,12 @@ public class oData_Global {
 
     @Then("^Status code should be 200 for global API$")
     public void status_code_should_be_200_for_global_api()  {
-        commons.Status_code();
-
+  commons.Status_code(response);
     }
 
     @And("^Response should have all the related information$")
     public void response_should_have_all_the_related_information() {
-        System.out.println("as");
+        commons.print_response(response);
+       // System.out.println("as");
     }
 }
