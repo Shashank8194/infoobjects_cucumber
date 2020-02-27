@@ -1,6 +1,7 @@
 package cucumber.api.testng;
 
 import cucumber.api.CucumberOptions;
+import org.testng.IRetryAnalyzer;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -44,7 +45,10 @@ public class TestNGScenarioTest
         return this.testNGCucumberRunner.provideScenarios();
     }
 
-    @Test(dataProvider = "scenariosWithFeature",description = "Run each scenarios as testng test",groups = {"cucumber"})
+    @Test(dataProvider = "scenariosWithFeature",
+            description = "Run each scenarios as testng test",
+            groups = {"cucumber"},
+            retryAnalyzer = RetryAnalyzer.class)
     public void runScenarioWithFeature(CucumberTagStatementWrapper cucumberTagStatementWrapper) throws Throwable
     {
         System.out.println("Cucumber Feature: "+cucumberTagStatementWrapper.getCucumberFeature());
