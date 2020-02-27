@@ -152,10 +152,4 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-    <scm>
-        <connection>scm:git:git://github.com/prasanta-biswas/testng-cucumber.git</connection>
-        <developerConnection>scm:git:git@github.com:/prasanta-biswas/testng-cucumber.git</developerConnection>
-        <url>git://prasanta-biswas/testng-cucumber.git</url>
-        <tag>HEAD</tag>
-    </scm>
 </project>
